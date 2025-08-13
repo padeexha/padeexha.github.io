@@ -1,110 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bopage Padeesha Kumarasiri — Portfolio</title>
-  <meta name="description" content="Portfolio of Bopage Padeesha Kumarasiri — Software Engineering student and IoT/Embedded systems enthusiast." />
+  <meta name="description"
+    content="Portfolio of Bopage Padeesha Kumarasiri — Software Engineering student and IoT/Embedded systems enthusiast." />
   <meta property="og:title" content="Bopage Padeesha Kumarasiri — Portfolio" />
-  <meta property="og:description" content="Software Engineering student • IoT & Smart Devices • Home Automation • PCB Design" />
+  <meta property="og:description"
+    content="Software Engineering student • IoT & Smart Devices • Home Automation • PCB Design" />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #0b0c0f; /* dark */
-      --panel:#12141a;
-      --text:#e6e8ec;
-      --muted:#a9b0bd;
-      --primary:#7c5cff;
-      --accent:#22c55e;
+    :root {
+      --bg: #0b0c0f;
+      /* dark */
+      --panel: #12141a;
+      --text: #e6e8ec;
+      --muted: #a9b0bd;
+      --primary: #7c5cff;
+      --accent: #22c55e;
       --border: #1f2430;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .25);
     }
-    :root.light{
-      --bg: #f8fafc; /* light */
-      --panel:#ffffff;
-      --text:#0b1220;
-      --muted:#4b5563;
-      --primary:#5b34ff;
-      --accent:#16a34a;
+
+    :root.light {
+      --bg: #f8fafc;
+      /* light */
+      --panel: #ffffff;
+      --text: #0b1220;
+      --muted: #4b5563;
+      --primary: #5b34ff;
+      --accent: #16a34a;
       --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --shadow: 0 10px 30px rgba(2, 6, 23, .08);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+
+    * {
+      box-sizing: border-box
     }
-    a{color:var(--primary);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header.nav{
-      position:sticky;top:0;z-index:30;background:color-mix(in sRGB, var(--bg) 88%, transparent);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid var(--border);
+
+    html,
+    body {
+      margin: 0;
+      height: 100%
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
-    .nav-links a{padding:8px 10px;border-radius:12px}
-    .nav-links a:hover{background:var(--panel);text-decoration:none}
-    .theme-toggle{border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px;cursor:pointer}
 
-    .hero{padding:72px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
-    .hero .intro{padding:28px;border-radius:24px}
-    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:transparent;color:var(--muted);border-radius:999px;padding:6px 10px;font-size:12px}
-    h1{font-size:clamp(28px, 6vw, 44px);line-height:1.2;margin:12px 0 6px}
-    .sub{color:var(--muted);font-size:15px;margin-bottom:18px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--primary);color:#fff;padding:10px 14px;border-radius:14px;font-weight:600;box-shadow:var(--shadow)}
-    .btn.secondary{background:transparent;color:var(--text)}
+    body {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-    .stat{padding:16px;text-align:center;border-radius:16px;border:1px solid var(--border)}
-    .stat b{display:block;font-size:22px}
+    a {
+      color: var(--primary);
+      text-decoration: none
+    }
 
-    section{padding:36px 0}
-    h2{font-size:22px;margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-4{grid-column:span 4}
-    .col-8{grid-column:span 8}
+    a:hover {
+      text-decoration: underline
+    }
 
-    .list{display:grid;gap:12px}
-    .item{padding:18px;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
-    .item h3{margin:0 0 6px;font-size:18px}
-    .meta{color:var(--muted);font-size:14px}
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px
+    }
 
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:transparent}
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: color-mix(in sRGB, var(--bg) 88%, transparent);
+      backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
 
-    .edu{display:grid;gap:12px}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
 
-    footer{padding:36px 0;border-top:1px solid var(--border);color:var(--muted)}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700
+    }
 
-    .contact-card{padding:22px}
-    .contact-row{display:flex;gap:14px;flex-wrap:wrap}
-    .contact-row a{border:1px solid var(--border);padding:10px 12px;border-radius:12px;background:var(--panel)}
+    .brand .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent)
+    }
 
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .col-4,.col-8{grid-column:1/-1}
-      .stats{grid-template-columns:repeat(3,1fr)}
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 12px
+    }
+
+    .nav-links a:hover {
+      background: var(--panel);
+      text-decoration: none
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .hero .intro {
+      padding: 28px;
+      border-radius: 24px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      line-height: 1.2;
+      margin: 12px 0 6px
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow)
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text)
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px
+    }
+
+    .stat {
+      padding: 16px;
+      text-align: center;
+      border-radius: 16px;
+      border: 1px solid var(--border)
+    }
+
+    .stat b {
+      display: block;
+      font-size: 22px
+    }
+
+    section {
+      padding: 36px 0
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 0 0 12px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px
+    }
+
+    .col-4 {
+      grid-column: span 4
+    }
+
+    .col-8 {
+      grid-column: span 8
+    }
+
+    .list {
+      display: grid;
+      gap: 12px
+    }
+
+    .item {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel)
+    }
+
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 18px
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: transparent
+    }
+
+    .edu {
+      display: grid;
+      gap: 12px
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted)
+    }
+
+    .contact-card {
+      padding: 22px
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .contact-row a {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: var(--panel)
+    }
+
+    .proj-img {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .proj-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .proj-gallery .proj-img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .proj-gallery2 {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      /* lets them wrap on small screens */
+    }
+
+    .proj-gallery2 .proj-img {
+      max-width: 48%;
+      /* two per row */
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .col-4,
+      .col-8 {
+        grid-column: 1/-1
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, 1fr)
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Padeesha.dev</span></div>
+      <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Padeesha Kumarasiri</span></div>
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -113,7 +374,7 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Theme</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Dark Mode</button>
     </div>
   </header>
 
@@ -122,36 +383,47 @@
       <div class="intro card">
         <span class="badge">Software Engineering @ ECU • IoT & Embedded</span>
         <h1>Bopage Padeesha Kumarasiri</h1>
-        <p class="sub">I build smart devices and software that bridge the physical and digital worlds — from Home Assistant–powered automation to custom PCBs and real‑time systems.</p>
+        <p class="sub">I build smart devices and software that bridge the physical and digital worlds — from Home
+          Assistant–powered automation to custom PCBs and real‑time systems.</p>
         <div class="cta">
           <a class="btn" href="#projects">See my work</a>
           <a class="btn secondary" href="mailto:padeesha.kumarasiri@gmail.com">Email me</a>
           <a class="btn secondary" href="assets/Padeesha_Resume.pdf" download>Download Resume (PDF)</a>
         </div>
-        <div class="stats">
-          <div class="stat"><b>3+ yrs</b><span class="muted">Hands‑on building</span></div>
-          <div class="stat"><b>IoT • PCB • Web</b><span class="muted">End‑to‑end</span></div>
-          <div class="stat"><b>Colombo, LK</b><span class="muted">Open to roles</span></div>
-        </div>
-      </div>
-      <div class="card contact-card">
-        <h2>Quick Links</h2>
-        <div class="contact-row">
-          <a href="https://github.com/padeexha" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/padeeshakumarasiri" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://x.com/" target="_blank" rel="noopener">X/Twitter</a>
-          <a href="mailto:padeesha.kumarasiri@gmail.com">Email</a>
-        </div>
-        <p class="sub" style="margin-top:10px">Tip: Replace the placeholder links with your real profiles before publishing.</p>
-      </div>
+        <div class="stat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="var(--accent)"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M12 20v-6" />
+            <path d="M6 20v-4" />
+            <path d="M18 20v-8" />
+            <path d="M3 4h18" />
+          </svg>
+          <div>
+            <b>Future Innovator</b>
+            <span class="muted">Developing skills from PCB to Cloud</span>
+          </div>
+
+          <div class="card contact-card">
+            <h2>Quick Links</h2>
+            <div class="contact-row">
+              <a href="https://github.com/padeexha" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/padeeshakumarasiri" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/padeexha?igsh=eGpkeWZ4amlxd2w5&utm_source=qr" target="_blank"
+                rel="noopener">Instagram</a>
+              <a href="mailto:padeesha.kumarasiri@gmail.com">Email</a>
+            </div>
+          </div>
     </section>
 
     <section id="about" class="grid">
       <div class="col-8">
         <h2>About</h2>
         <div class="item">
-          <p>I’m a Software Engineering student at Edith Cowan University (ECU), with a background in IoT, embedded systems, and hardware design. I enjoy turning ideas into working prototypes — from motor‑driven mechanisms to cloud‑connected apps — and polishing them into user‑friendly products.</p>
-          <p>Previously, I managed and delivered tech projects in Sri Lanka, including a VR gaming center rollout and a bowling scoring upgrade, collaborating with cross‑functional teams from design to deployment.</p>
+          <p>I’m a Software Engineering student at Edith Cowan University (ECU), with a background in IoT, embedded
+            systems, and hardware design. I enjoy turning ideas into working prototypes — from motor‑driven mechanisms
+            to cloud‑connected apps — and polishing them into user‑friendly products.</p>
+          <p>Previously, I managed and delivered tech projects in Sri Lanka, including a VR gaming center rollout and a
+            bowling scoring upgrade, collaborating with cross‑functional teams from design to deployment.</p>
         </div>
       </div>
       <aside class="col-4">
@@ -174,38 +446,76 @@
           <h3>Project Manager / Director — Greenbay (Pvt) Ltd</h3>
           <div class="meta">Mar 2022 – Present • Colombo, Sri Lanka</div>
           <ul style="margin:8px 0 0 18px">
-            <li>Delivered a <b>VR Gaming Center</b> implementation at Excel World (Nov 2023), enhancing visitor engagement and on‑site operations.</li>
-            <li>Built and deployed a <b>Bowling Lane Scoring System</b> (May 2023) including custom PCBs for reliability and maintainability.</li>
-            <li>Designed and rolled out a <b>32‑camera IP surveillance</b> upgrade for Hiru Group (Apr 2022) with robust networking and cabling.</li>
+            <li>Delivered a <b>VR Gaming Center</b> implementation at Excel World (Nov 2023), enhancing visitor
+              engagement and on‑site operations.</li>
+            <li>Built and deployed a <b>Bowling Lane Scoring System</b> (May 2023) including custom PCBs for reliability
+              and maintainability.</li>
+            <li>Designed and rolled out a <b>32‑camera IP surveillance</b> upgrade for Hiru Group (Apr 2022) with robust
+              networking and cabling.</li>
           </ul>
-        </div>
-      </div>
+          <div class="item">
+            <div class="proj-gallery2">
+              <img src="assets/Bowlin_1.JPG" class="proj-img">
+              <img src="assets/Bowlin_2.JPG" class="proj-img">
+            </div>
+            <div class="item">
+              <div class="proj-gallery">
+                <img src="assets/PCB_7.jpg" class="proj-img">
+                <img src="assets/PCB_8.jpg" class="proj-img">
+              </div>
+            </div>
+          </div>
     </section>
 
     <section id="projects">
       <h2>Featured Projects</h2>
       <div class="list">
+
         <div class="item">
           <h3>Semi‑Automatic Cooking Machine</h3>
           <div class="meta">Jan 2023 – Dec 2024 • Team of 5</div>
-          <p>Raspberry Pi 4–based system that automates Sri Lankan curry preparation. Modules include stepper‑driven dry dispenser, servo‑controlled fresh dispenser, diaphragm pump liquid dosing, stirring mechanism, and self‑draining grain wash. HMI built with NeXTion display; supports 4 dishes now, scalable to 56 via software.</p>
+          <p>Raspberry Pi 4–based system that automates Sri Lankan curry preparation. Modules include stepper‑driven dry
+            dispenser, servo‑controlled fresh dispenser, diaphragm pump liquid dosing, stirring mechanism, and
+            self‑draining grain wash. HMI built with NeXTion display; supports 4 dishes now, scalable to 56 via
+            software.</p>
           <div class="meta">Stack: Raspberry Pi 4 • Stepper/Servo control • NeXTion HMI • IoT • Embedded</div>
+          <br>
+          <img src="assets/cooking_machine.jpg" alt="Semi-Automatic Cooking Machine" class="proj-img">
         </div>
+
         <div class="item">
           <h3>Energy Monitoring System</h3>
           <div class="meta">Jul 2022 – Aug 2022 • Team of 4</div>
-          <p>Retrofitted an energy monitor plug with SSD1306 OLED, ZMPT101B voltage sensor, and ACS712 current sensor to capture real‑time usage, analyze patterns, and surface insights for efficiency.</p>
+          <p>Retrofitted an energy monitor plug with SSD1306 OLED, ZMPT101B voltage sensor, and ACS712 current sensor to
+            capture real‑time usage, analyze patterns, and surface insights for efficiency.</p>
           <div class="meta">Stack: Arduino/ESP • SSD1306 • ZMPT101B • ACS712 • Cloud analytics</div>
         </div>
         <div class="item">
           <h3>Home Automation System (Home Lab)</h3>
-          <p>Comprehensive Home Assistant hub integrating Zigbee/Wi‑Fi lighting and a connected plant irrigation system. Remote control via mobile app, automations, and sensor‑driven routines.</p>
+          <p>Comprehensive Home Assistant hub integrating Zigbee/Wi‑Fi lighting and a connected plant irrigation system.
+            Remote control via mobile app, automations, and sensor‑driven routines.</p>
           <div class="meta">Stack: Home Assistant • Apple HomeKit • MQTT • Zigbee • Wi‑Fi</div>
+          <br>
+          <div class="proj-gallery">
+            <img src="assets/SM1.PNG" class="proj-img">
+            <img src="assets/SM2.PNG" class="proj-img">
+            <img src="assets/SM3.PNG" class="proj-img">
+          </div>
         </div>
         <div class="item">
           <h3>Smart Sliding Gate Controller</h3>
-          <p>Custom PCB + firmware with Home Assistant integration over MQTT. Features obstacle detection, auto‑close, and multi‑modal control: RF key fob, keypad, or voice.</p>
-          <div class="meta">Stack: ESP32 • MQTT • PCB (EasyEDA) • Sensors</div>
+          <p>Custom PCB + firmware with Home Assistant integration over MQTT. Features obstacle detection, auto‑close,
+            and multi‑modal control: RF key fob, keypad, or voice.</p>
+          <div class="meta">Stack: ESP32 • MQTT • PCB (EasyEDA) • Sensors </div>
+          <br>
+          <div class="proj-gallery">
+            <img src="assets/PCB_1.jpg" class="proj-img">
+            <img src="assets/PCB_2.jpg" class="proj-img">
+            <img src="assets/PCB_3.jpg" class="proj-img">
+            <img src="assets/PCB_4.jpg" class="proj-img">
+            <img src="assets/PCB_5.jpg" class="proj-img">
+            <img src="assets/PCB_6.jpg" class="proj-img">
+          </div>
         </div>
       </div>
     </section>
@@ -251,7 +561,8 @@
       <aside class="col-4">
         <div class="item">
           <h3>Activities</h3>
-          <p>National Cadet Corps (2021–2023): Leadership, discipline, teamwork through intensive training and events.</p>
+          <p>National Cadet Corps (2021–2023): Leadership, discipline, teamwork through intensive training and events.
+          </p>
         </div>
       </aside>
     </section>
@@ -259,15 +570,17 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="item">
-        <p>Interested in collaborating or hiring me for an IoT/Smart Devices role? Reach out via email and I’ll get back to you promptly.</p>
+        <p>Interested in collaborating or hiring me for an role? Reach out via email and I’ll get back to you as Soon as
+          Possible.</p>
         <p><b>Email:</b> <a href="mailto:padeesha.kumarasiri@gmail.com">padeesha.kumarasiri@gmail.com</a></p>
-        <p style="color:var(--muted);font-size:14px">(Optional) Add phone or a contact form later — avoid publishing personal numbers on public sites unless you’re comfortable.</p>
+        <p style="color:var(--muted);font-size:14px"> +94 76 565 9596 • +94 70 346 6812</p>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        <div>&copy; <span id="year"></span> Bopage Padeesha Kumarasiri • Built with HTML/CSS/JS • Hosted on GitHub Pages</div>
+        <div>&copy; <span id="year"></span> Bopage Padeesha Kumarasiri • Built with HTML/CSS/JS • Hosted on GitHub Pages
+        </div>
       </div>
     </footer>
   </main>
@@ -276,23 +589,23 @@
     // Theme toggle with localStorage
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
-    function applyTheme(t){
-      if(t==='light'){ root.classList.add('light'); }
+    function applyTheme(t) {
+      if (t === 'light') { root.classList.add('light'); }
       else { root.classList.remove('light'); }
     }
     const saved = localStorage.getItem('theme');
-    applyTheme(saved||'');
-    toggleBtn.addEventListener('click',()=>{
+    applyTheme(saved || '');
+    toggleBtn.addEventListener('click', () => {
       const now = root.classList.contains('light') ? '' : 'light';
       applyTheme(now); localStorage.setItem('theme', now);
     });
 
     // Smooth scroll for in-page links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href');
-        const el=document.querySelector(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
 
@@ -320,4 +633,5 @@
   }
   </script>
 </body>
+
 </html>
